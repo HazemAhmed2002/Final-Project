@@ -21,8 +21,8 @@ class OrdersViewController: UIViewController , UITableViewDelegate , UITableView
         cell.name.text = arrOrders[indexPath.row][0]
         cell.labeDesc.text = arrOrders[indexPath.row][1]
         cell.price.text = arrOrders[indexPath.row][2]
-        cell.imgView.image = #imageLiteral(resourceName: "user1")
-        
+        cell.imgView.image = #imageLiteral(resourceName: "img")
+        cell.selectionStyle = .none
 
         return cell
     }
@@ -31,7 +31,7 @@ class OrdersViewController: UIViewController , UITableViewDelegate , UITableView
     }
     
     @IBOutlet weak var tableView: UITableView!
-    var arrOrders : [[String]] = [["شقة" , "غزة٫الجلاء" , "40000 دولار"] , ["فيلا" , "" , ""] , ["شقة" , "غزة٫الجلاء" , "40000 دولار"]]
+    var arrOrders : [[String]] = [["شقة" , "غزة٫الجلاء" , "40000 دولار"] , ["فيلا" , "شارع الرشيد" , "200000 دولار"] , ["شقة" , "غزة-غزة" , "25000 دولار"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +42,25 @@ class OrdersViewController: UIViewController , UITableViewDelegate , UITableView
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 0){
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "OrderPage1") as? UIViewController{
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }else if(indexPath.row == 1){
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "OrderPage2") as? UIViewController{
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }else if(indexPath.row == 2){
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "OrderPage3") as? UIViewController{
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    
     
     
 
     
 
+}
 }
