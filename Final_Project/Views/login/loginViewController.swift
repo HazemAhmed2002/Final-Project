@@ -22,7 +22,10 @@ class loginViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        if(usernameTextField.text == "Hazem" && passwordTextField.text == "123456"){
+        if((usernameTextField.text == "Hazem"
+           && passwordTextField.text == "123456" ) ||
+           (usernameTextField.text == "Loay" &&
+            passwordTextField.text == "123123")){
             if let vc = storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as? UITabBarController{
                 
                 present(vc, animated: true)
