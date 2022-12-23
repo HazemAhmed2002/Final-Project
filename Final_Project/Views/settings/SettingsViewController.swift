@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController ,UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    var arr = ["Home Page" , "About the application" , "Terms and Conditions" , "Logout"]
+    var arrSetting = ["Home Page" , "About the application" , "Terms and Conditions" , "Logout"]
     
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,13 @@ class SettingsViewController: UIViewController ,UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return arrSetting.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath)
         cell.selectionStyle = .none
-        cell.textLabel?.text = arr[indexPath.row]
+        cell.textLabel?.text = arrSetting[indexPath.row]
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)

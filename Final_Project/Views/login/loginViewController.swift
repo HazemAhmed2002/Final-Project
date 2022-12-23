@@ -22,16 +22,20 @@ class loginViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        if((usernameTextField.text == "Hazem"
-           && passwordTextField.text == "123456" ) ||
-           (usernameTextField.text == "Loay" &&
-            passwordTextField.text == "123123")){
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as? UITabBarController{
+        var userFound = false
+        for user in UsersViewController.usersArr {
+            if(usernameTextField.text == user[0] && passwordTextField.text == user[1]){
+                if let vc = storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as? UITabBarController{
+                    userFound = true
+                    present(vc, animated: true)
+                    break
+                }
                 
-                present(vc, animated: true)
             }
             
-        }else {
+        }
+        
+        if (userFound == false) {
             let alert = UIAlertController(title: "Error", message: "Invalid username or password", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
