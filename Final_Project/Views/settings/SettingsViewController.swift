@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController ,UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    var arrSetting = ["Home Page" , "About the application" , "Terms and Conditions" , "Logout"]
+    var arrSetting = ["Profile Page" , "About the application" , "Terms and Conditions" , "Logout"]
     
         override func viewDidLoad() {
         super.viewDidLoad()
