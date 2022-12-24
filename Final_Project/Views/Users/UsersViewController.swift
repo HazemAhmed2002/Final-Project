@@ -12,6 +12,7 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     
     @IBOutlet weak var passwordTxt: UITextField!
+    
     static var usersArr = [["Hazem" , "123456"]]
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class UsersViewController: UIViewController {
     @IBAction func SignUpBtn(_ sender: Any) {
         if let name = userName.text , let password = passwordTxt.text {
             UsersViewController.usersArr.append([name , password])
-            print(name , "++" , password)
+            
         }
     }
     

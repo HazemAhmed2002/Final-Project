@@ -58,6 +58,7 @@ class OnboardingViewController: UIViewController {
 
 
 extension OnboardingViewController:UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return slides.count
     }
@@ -65,6 +66,7 @@ extension OnboardingViewController:UICollectionViewDelegate , UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.identifier, for: indexPath) as! OnboardingCollectionViewCell
         cell.setup(slides[indexPath.row])
+        
         return cell
     }
     

@@ -19,8 +19,6 @@ class SettingsViewController: UIViewController ,UITableViewDelegate, UITableView
         super.viewDidLoad()
             tableView.delegate = self
             tableView.dataSource = self
-
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

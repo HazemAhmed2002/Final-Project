@@ -9,6 +9,8 @@ import UIKit
 
 class OrdersViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
+    var arrOrders : [[String]] = [["شقة" , "غزة٫الجلاء" , "40000 دولار"] , ["فيلا" , "شارع الرشيد" , "200000 دولار"] , ["شقة" , "غزة-غزة" , "25000 دولار"]]
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrOrders.count
@@ -28,16 +30,18 @@ class OrdersViewController: UIViewController , UITableViewDelegate , UITableView
 
         return cell
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     @IBOutlet weak var tableView: UITableView!
-    var arrOrders : [[String]] = [["شقة" , "غزة٫الجلاء" , "40000 دولار"] , ["فيلا" , "شارع الرشيد" , "200000 دولار"] , ["شقة" , "غزة-غزة" , "25000 دولار"]]
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ordersTableViewCell", bundle: nil), forCellReuseIdentifier: "ordersCell")
+        
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -58,11 +62,5 @@ class OrdersViewController: UIViewController , UITableViewDelegate , UITableView
                 navigationController?.pushViewController(vc, animated: true)
             }
         }
-    
-    
-    
-
-    
-
-}
+    }
 }
