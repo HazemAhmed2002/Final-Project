@@ -13,6 +13,9 @@ class ordersTableViewCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var labeDesc: UILabel!
     @IBOutlet weak var name: UILabel!
+    
+    
+    @IBOutlet weak var btnAddToFavorite: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -27,6 +27,8 @@ class OrdersViewController: UIViewController , UITableViewDelegate , UITableView
         cell.price.textColor = UIColor.red
         cell.imgView.image = #imageLiteral(resourceName: "img")
         cell.selectionStyle = .none
+        
+        cell.btnAddToFavorite.isHidden = true
 
         return cell
     }
