@@ -25,6 +25,7 @@ class CompanyViewController: UIViewController , UITableViewDelegate , UITableVie
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ordersCell", for: indexPath) as? ordersTableViewCell else{
             return UITableViewCell();
         }
+        
         cell.name.text = CompanyViewController.arrCompany[indexPath.row][0]
         cell.labeDesc.text = CompanyViewController.arrCompany[indexPath.row][1]
         cell.price.text = CompanyViewController.arrCompany[indexPath.row][2]
@@ -49,7 +50,8 @@ class CompanyViewController: UIViewController , UITableViewDelegate , UITableVie
                 isFavorite = false
                 sender.setImage(UIImage(systemName: "heart"), for: .normal)
             FavoriteCompanyViewController.favoritesList.removeAll { $0 == sender.tag}
-                print("unFav : \(sender.tag)")
+//                print("unFav : \(sender.tag)")
+            
             } else {
                 
                 isFavorite = true
@@ -58,10 +60,10 @@ class CompanyViewController: UIViewController , UITableViewDelegate , UITableVie
                     print("found")
                 }else {
                     FavoriteCompanyViewController.favoritesList.append(sender.tag)
-                    print("not found")
+//                    print("not found")
                 }
-                print("Fav : \(sender.tag)")
-                print(FavoriteCompanyViewController.favoritesList)
+//                print("Fav : \(sender.tag)")
+//                print(FavoriteCompanyViewController.favoritesList)
             }
         
     }
